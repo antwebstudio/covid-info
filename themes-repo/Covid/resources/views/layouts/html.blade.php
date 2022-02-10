@@ -11,7 +11,7 @@
         <link rel="canonical" href="{{ url()->current() }}">
 
         {{-- Styles --}}
-		<link rel="stylesheet" href="{{ theme_mix('/css/theme.css') }}" media="screen">
+		<link rel="stylesheet" href="{{ url('/theme/css/theme.css') }}" media="screen">
 		<style>
 			header {
 				background-color: #446BEB;

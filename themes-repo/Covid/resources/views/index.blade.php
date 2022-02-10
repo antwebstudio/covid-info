@@ -46,6 +46,16 @@
 		@foreach($posts as $post)
 			<div>
 				<a href="{{ $post->url }}">{{ $post->name }}</a>
+				<div>
+					@foreach($post->tags as $tag)
+						
+						<div class="bg-indigo-100 inline-flex items-center text-sm rounded mt-2 mr-1">
+						  <a href="?tags={{ Ant\Core\Helpers\UrlFilter::addTo('tags', $tag->name) }}" class="mx-2 leading-relaxed truncate max-w-xs">
+							{{ $tag->name }}
+						  </a>
+						</div>
+					@endforeach
+				</div>
 			</div>
 		@endforeach
 		

@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dca7efff6cb3041d7b1a8709c274a788",
+    "content-hash": "5bbfeda61a2399d29f0716d8203a539c",
     "packages": [
+        {
+            "name": "antweb/deployer-recipe",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antwebstudio/deployer-recipe.git",
+                "reference": "bf570637f707c69eb573a1dd52fd34d0a88b722d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antwebstudio/deployer-recipe/zipball/bf570637f707c69eb573a1dd52fd34d0a88b722d",
+                "reference": "bf570637f707c69eb573a1dd52fd34d0a88b722d",
+                "shasum": ""
+            },
+            "require": {
+                "deployer/deployer": "^6.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Hui Yang",
+                    "email": "chy1988@antwebstudio.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/antwebstudio/deployer-recipe/issues",
+                "source": "https://github.com/antwebstudio/deployer-recipe/tree/master"
+            },
+            "time": "2021-10-25T08:23:23+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
@@ -388,6 +425,134 @@
                 }
             ],
             "time": "2020-12-03T15:47:16+00:00"
+        },
+        {
+            "name": "deployer/deployer",
+            "version": "v6.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deployphp/deployer.git",
+                "reference": "4e243a64ed61e779fbb31c5a74e258a8e52fdaff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deployphp/deployer/zipball/4e243a64ed61e779fbb31c5a74e258a8e52fdaff",
+                "reference": "4e243a64ed61e779fbb31c5a74e258a8e52fdaff",
+                "shasum": ""
+            },
+            "require": {
+                "deployer/phar-update": "~2.2",
+                "php": "^7.2",
+                "pimple/pimple": "~3.0",
+                "symfony/console": "~2.7|~3.0|~4.0|~5.0",
+                "symfony/process": "~2.7|~3.0|~4.0|~5.0",
+                "symfony/yaml": "~2.7|~3.0|~4.0|~5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8"
+            },
+            "bin": [
+                "bin/dep"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Support/helpers.php",
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Deployer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Medvedev",
+                    "email": "anton@medv.io"
+                }
+            ],
+            "description": "Deployment Tool",
+            "homepage": "https://deployer.org",
+            "support": {
+                "docs": "https://deployer.org/docs",
+                "issues": "https://github.com/deployphp/deployer/issues",
+                "source": "https://github.com/deployphp/deployer"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/antonmedv",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/deployer",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-04-25T16:05:31+00:00"
+        },
+        {
+            "name": "deployer/phar-update",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deployphp/phar-update.git",
+                "reference": "9ad07422f2cd43a1382ee8e134bdcd3a374848e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deployphp/phar-update/zipball/9ad07422f2cd43a1382ee8e134bdcd3a374848e3",
+                "reference": "9ad07422f2cd43a1382ee8e134bdcd3a374848e3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/console": "~2.7|~3.0|~4.0|~5.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.1.0",
+                "phpunit/phpunit": "3.7.*",
+                "symfony/process": "~2.7|~3.0|~4.0|~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Deployer\\Component\\PharUpdate\\": "src/",
+                    "Deployer\\Component\\PHPUnit\\": "src/PHPUnit/",
+                    "Deployer\\Component\\Version\\": "src/Version/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Herrera",
+                    "email": "kevin@herrera.io",
+                    "homepage": "http://kevin.herrera.io"
+                },
+                {
+                    "name": "Anton Medvedev",
+                    "email": "anton@medv.io",
+                    "homepage": "https://medv.io"
+                }
+            ],
+            "description": "Integrates Phar Update to Symfony Console.",
+            "homepage": "https://github.com/deployphp/phar-update",
+            "keywords": [
+                "console",
+                "phar",
+                "update"
+            ],
+            "support": {
+                "issues": "https://github.com/deployphp/phar-update/issues",
+                "source": "https://github.com/deployphp/phar-update/tree/v2.2.0"
+            },
+            "abandoned": true,
+            "time": "2019-12-12T13:45:57+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -3455,6 +3620,75 @@
             "time": "2021-04-09T13:42:10+00:00"
         },
         {
+            "name": "osiemsiedem/laravel-autolink",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/osiemsiedem/laravel-autolink.git",
+                "reference": "dc214fe729b65d85f313e5f88275ef97beda98ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/osiemsiedem/laravel-autolink/zipball/dc214fe729b65d85f313e5f88275ef97beda98ad",
+                "reference": "dc214fe729b65d85f313e5f88275ef97beda98ad",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0",
+                "php": "^7.3",
+                "spatie/laravel-html": "^2.27",
+                "symfony/polyfill-mbstring": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.1",
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OsiemSiedem\\Autolink\\AutolinkServiceProvider"
+                    ],
+                    "aliases": {
+                        "Autolink": "OsiemSiedem\\Autolink\\Facades\\Autolink"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "OsiemSiedem\\Autolink\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marek Szymczuk",
+                    "email": "marek@osiemsiedem.com",
+                    "homepage": "http://osiemsiedem.com"
+                }
+            ],
+            "description": "A Laravel package for converting URLs in a given string of text into clickable links.",
+            "keywords": [
+                "autolink",
+                "email",
+                "html",
+                "laravel",
+                "url",
+                "www"
+            ],
+            "support": {
+                "issues": "https://github.com/osiemsiedem/laravel-autolink/issues",
+                "source": "https://github.com/osiemsiedem/laravel-autolink/tree/5.0.0"
+            },
+            "time": "2020-09-09T11:35:49+00:00"
+        },
+        {
             "name": "paragonie/constant_time_encoding",
             "version": "v2.4.0",
             "source": {
@@ -3742,6 +3976,59 @@
                 }
             ],
             "time": "2021-10-27T03:01:46+00:00"
+        },
+        {
+            "name": "pimple/pimple",
+            "version": "v3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silexphp/Pimple.git",
+                "reference": "a94b3a4db7fb774b3d78dad2315ddc07629e1bed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/a94b3a4db7fb774b3d78dad2315ddc07629e1bed",
+                "reference": "a94b3a4db7fb774b3d78dad2315ddc07629e1bed",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/container": "^1.1 || ^2.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^5.4@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Pimple": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Pimple, a simple Dependency Injection Container",
+            "homepage": "https://pimple.symfony.com",
+            "keywords": [
+                "container",
+                "dependency injection"
+            ],
+            "support": {
+                "source": "https://github.com/silexphp/Pimple/tree/v3.5.0"
+            },
+            "time": "2021-10-28T11:13:42+00:00"
         },
         {
             "name": "predis/predis",
@@ -4874,6 +5161,85 @@
                 }
             ],
             "time": "2021-09-12T10:04:18+00:00"
+        },
+        {
+            "name": "spatie/laravel-html",
+            "version": "2.30.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-html.git",
+                "reference": "e7a9caa9b7d9f8a0bdf514a424034f74101de926"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/e7a9caa9b7d9f8a0bdf514a424034f74101de926",
+                "reference": "e7a9caa9b7d9f8a0bdf514a424034f74101de926",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "php": "^8.0|^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Html": "Spatie\\Html\\Facades\\Html"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Html\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A fluent html builder",
+            "homepage": "https://github.com/spatie/laravel-html",
+            "keywords": [
+                "html",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-html/issues",
+                "source": "https://github.com/spatie/laravel-html/tree/2.30.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-07-09T07:26:20+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -10674,6 +11040,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "antweb/deployer-recipe": 20,
         "fusioncms/cms": 20
     },
     "prefer-stable": true,

@@ -8,7 +8,7 @@ class Post extends \Fusion\Models\Collections\Post
 {
 	public function getUrlAttribute()
 	{
-		return url('/p/'.$this->slug);
+		return url('/p/'.$this->slug.'?tags='.request()->tags);
 	}
 	
 	public function scopeActive($query) 

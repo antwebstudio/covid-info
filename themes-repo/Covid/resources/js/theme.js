@@ -1,9 +1,5 @@
 console.log('init')
 
-window.tagUpdated2 = function(tags) {
-	location.href = '?tags=' + tags.join(',')
-}
-
 window.tagSelect = function() {
   return {
     open: false,

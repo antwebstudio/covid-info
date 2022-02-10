@@ -1,0 +1,13 @@
+{
+    "name": "antweb/laravel-core",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Hui Yang",
+            "email": "chy1988@antwebstudio.com"
+        }
+    ],
+    "require": {
+        "spatie/laravel-schemaless-attributes": "*"
+    }
+}

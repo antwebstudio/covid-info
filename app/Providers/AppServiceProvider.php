@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use App\Autolink\HtmlRenderer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,16 @@ class AppServiceProvider extends ServiceProvider
                 app(\App\Models\Post::class)->morphTypeName() => \App\Models\Post::class,
             ]);
         }
+
+        $this->app->singleton('app.autolink.renderer', function ($app) {
+            $renderer = new HtmlRenderer;
+
+            foreach ($app['config']->get('autolink.filters') as $filter) {
+                $renderer->addFilter(new $filter);
+            }
+
+            return $renderer;
+        });
     }
 	
 }

@@ -1,1 +1,228 @@
-(()=>{var t,e={577:()=>{console.log("init"),window.tagUpdated2=function(t){location.href="?tags="+t.join(",")},window.tagSelect=function(){return{open:!1,textInput:"",tags:[],init:function(){this.tags=JSON.parse(this.$el.parentNode.getAttribute("data-tags"))},tagUpdated:function(t){location.href="?tags="+t.join(",")},addTag:function(t){""==(t=t.trim())||this.hasTag(t)||this.tags.push(t),this.clearSearch(),this.$refs.textInput.focus(),this.fireTagsUpdateEvent()},fireTagsUpdateEvent:function(){this.$el.dispatchEvent(new CustomEvent("tags-update",{detail:{tags:this.tags},bubbles:!0}))},hasTag:function(t){return null!=(t=this.tags.find((function(e){return e.toLowerCase()===t.toLowerCase()})))},removeTag:function(t){this.tags.splice(t,1),this.fireTagsUpdateEvent()},search:function(t){t.includes(",")&&t.split(",").forEach((function(t){this.addTag(t)}),this),this.toggleSearch()},clearSearch:function(){this.textInput="",this.toggleSearch()},toggleSearch:function(){this.open=""!=this.textInput}}}},194:()=>{}},n={};function i(t){var a=n[t];if(void 0!==a)return a.exports;var r=n[t]={exports:{}};return e[t](r,r.exports,i),r.exports}i.m=e,t=[],i.O=(e,n,a,r)=>{if(!n){var s=1/0;for(u=0;u<t.length;u++){for(var[n,a,r]=t[u],o=!0,h=0;h<n.length;h++)(!1&r||s>=r)&&Object.keys(i.O).every((t=>i.O[t](n[h])))?n.splice(h--,1):(o=!1,r<s&&(s=r));if(o){t.splice(u--,1);var c=a();void 0!==c&&(e=c)}}return e}r=r||0;for(var u=t.length;u>0&&t[u-1][2]>r;u--)t[u]=t[u-1];t[u]=[n,a,r]},i.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),(()=>{var t={8:0,676:0};i.O.j=e=>0===t[e];var e=(e,n)=>{var a,r,[s,o,h]=n,c=0;if(s.some((e=>0!==t[e]))){for(a in o)i.o(o,a)&&(i.m[a]=o[a]);if(h)var u=h(i)}for(e&&e(n);c<s.length;c++)r=s[c],i.o(t,r)&&t[r]&&t[r][0](),t[r]=0;return i.O(u)},n=self.webpackChunktheme=self.webpackChunktheme||[];n.forEach(e.bind(null,0)),n.push=e.bind(null,n.push.bind(n))})(),i.O(void 0,[676],(()=>i(577)));var a=i.O(void 0,[676],(()=>i(194)));a=i.O(a)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./resources/js/theme.js":
+/*!*******************************!*\
+  !*** ./resources/js/theme.js ***!
+  \*******************************/
+/***/ (() => {
+
+console.log('init');
+
+window.tagSelect = function () {
+  return {
+    open: false,
+    textInput: '',
+    tags: [],
+    init: function init() {
+      this.tags = JSON.parse(this.$el.parentNode.getAttribute('data-tags'));
+    },
+    tagUpdated: function tagUpdated(tags) {
+      location.href = '?tags=' + tags.join(',');
+    },
+    addTag: function addTag(tag) {
+      tag = tag.trim();
+
+      if (tag != "" && !this.hasTag(tag)) {
+        this.tags.push(tag);
+      }
+
+      this.clearSearch();
+      this.$refs.textInput.focus();
+      this.fireTagsUpdateEvent();
+    },
+    fireTagsUpdateEvent: function fireTagsUpdateEvent() {
+      this.$el.dispatchEvent(new CustomEvent('tags-update', {
+        detail: {
+          tags: this.tags
+        },
+        bubbles: true
+      }));
+    },
+    hasTag: function hasTag(tag) {
+      var tag = this.tags.find(function (e) {
+        return e.toLowerCase() === tag.toLowerCase();
+      });
+      return tag != undefined;
+    },
+    removeTag: function removeTag(index) {
+      this.tags.splice(index, 1);
+      this.fireTagsUpdateEvent();
+    },
+    search: function search(q) {
+      if (q.includes(",")) {
+        q.split(",").forEach(function (val) {
+          this.addTag(val);
+        }, this);
+      }
+
+      this.toggleSearch();
+    },
+    clearSearch: function clearSearch() {
+      this.textInput = '';
+      this.toggleSearch();
+    },
+    toggleSearch: function toggleSearch() {
+      this.open = this.textInput != '';
+    }
+  };
+};
+
+/***/ }),
+
+/***/ "./resources/scss/theme.scss":
+/*!***********************************!*\
+  !*** ./resources/scss/theme.scss ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/theme": 0,
+/******/ 			"css/theme": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunktheme"] = self["webpackChunktheme"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/theme"], () => (__webpack_require__("./resources/js/theme.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/theme"], () => (__webpack_require__("./resources/scss/theme.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;

@@ -35,3 +35,7 @@ before('deploy:symlink', 'artisan:migrate');
 task('artisan:optimize', function() {
 	// Purposely leave it blank to cancel/overwrite the predefined task
 });
+
+task('db:backup', function() {
+	// Purposely leave it blank to cancel/overwrite the predefined task
+});

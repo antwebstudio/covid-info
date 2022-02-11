@@ -9,23 +9,37 @@
 @section('title', $post->name)
 
 @section('content')
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=205407196610271&autoLogAppEvents=1" nonce="XZq9jrtP"></script>
+	
 	<div class="container mx-auto py-3 px-3">
 	
 		<h1>{{ $post->name }}</h1>
-		<article>
+		<article class="article">
 			{!! $autolink->convert($post->content) !!}
 		</article>
 		
 		<a href="{{ url('/?tags='.request()->tags) }}" class="btn btn-primary my-2">Back</a>
 		
-		@if(isset($post->collecting))
-		<div class="">
+		@if(isset($post->collecting) && $post->collecting->isNotEmpty())
+		<div class="mt-3 mb-5">
 			<h2>征求网民提供资讯：</h2>
-			<ol>
+			<ul class="list-disc">
 				@foreach($post->collecting as $message)
-					<li>{{ $message }}</li>
+					<li class="pl-3 ml-5">{{ $message }}</li>
 				@endforeach
-			</ol>
+			</ul>
+		</div>
+		@endif
+		
+		@if(isset($post->additional) && $post->additional->isNotEmpty())
+		<div class="mt-3 mb-5">
+			<h2>其他参考资讯 Other related references：</h2>
+			<ul class="list-disc">
+				@foreach($post->additional as $message)
+					<li class="pl-3 ml-5"><a href="{{ $message }}" target="_blank">{{ $message }}</a></li>
+				@endforeach
+			</ul>
 		</div>
 		@endif
 		

@@ -19,3 +19,19 @@ h1 {
 h2 {
 	@apply text-lg font-bold;
 }
+
+.article blockquote {
+	@apply border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500 pl-3;
+}
+
+.article p {
+	@apply mb-2;
+}
+
+.article ul {
+	@apply list-disc;
+}
+
+.article ol {
+	@apply list-decimal;
+}

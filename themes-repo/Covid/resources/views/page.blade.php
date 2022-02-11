@@ -1,33 +1,20 @@
 @extends('layouts.app')
 
 @php
-	$post = App\Models\Post::find($page->id);
-	
     $autolink = new OsiemSiedem\Autolink\Autolink(app('osiemsiedem.autolink.parser'), app('app.autolink.renderer'));
 @endphp
 
-@section('title', $post->name)
+@section('title', $page->name)
 
 @section('content')
 	<div class="container mx-auto py-3 px-3">
 	
-		<h1>{{ $post->name }}</h1>
+		<h1>{{ $page->name }}</h1>
 		<article>
-			{!! $autolink->convert($post->content) !!}
+			{!! $autolink->convert($page->content) !!}
 		</article>
 		
 		<a href="{{ url('/?tags='.request()->tags) }}" class="btn btn-primary my-2">Back</a>
-		
-		@if(isset($post->collecting))
-		<div class="">
-			<h2>征求网民提供资讯：</h2>
-			<ol>
-				@foreach($post->collecting as $message)
-					<li>{{ $message }}</li>
-				@endforeach
-			</ol>
-		</div>
-		@endif
 		
 		<div id="disqus_thread"></div>
 		<script>
@@ -37,7 +24,7 @@
 			
 			var disqus_config = function () {
 			this.page.url = "{{ url()->current() }}";  // Replace PAGE_URL with your page's canonical URL variable
-			this.page.identifier = "p_{{ $post->id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			this.page.identifier = "page_{{ $page->slug }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 			};
 			
 			(function() { // DON'T EDIT BELOW THIS LINE

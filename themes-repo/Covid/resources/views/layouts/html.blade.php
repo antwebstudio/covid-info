@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Test</title>
+        <title>@yield('title')</title>
 
         <link rel="canonical" href="{{ url()->current() }}">
 

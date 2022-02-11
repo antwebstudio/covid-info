@@ -16,7 +16,7 @@ set('shared_files', [
 ]);
 set('shared_dirs', [
 	'storage',
-	'themes',
+	//'themes',
 ]);
 
 // Writable dirs by web server 

@@ -12,3 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('p/{id}', function($id) {
+	$page = \Fusion\Models\Collections\Post::find($id);
+	return view('post', ['page' => $page]);
+});

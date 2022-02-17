@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.blank')
 
 @php
 	$post = App\Models\Post::find($page->id);
@@ -14,10 +14,34 @@
 	
 	<div class="container mx-auto py-3 px-3">
 	
-		<h1>{{ $post->name }}</h1>
-		<article class="article">
-			{!! $autolink->convert($post->content) !!}
-		</article>
+		<div class="p-6" x-data="{ openTab: 1, activeClasses: 'border-l border-t border-r rounded-t text-blue-700', inactiveClasses: 'text-blue-500 hover:text-blue-800'}" >
+			<ul class="flex border-b">
+			  <li @click="openTab = 1" :class="{ '-mb-px': openTab === 1 }" class="-mb-px mr-1">
+				<a :class="openTab === 1 ? activeClasses : inactiveClasses" class="bg-white inline-block py-2 px-4 font-semibold" href="#">
+				  English
+				</a>
+			  </li>
+			  <li @click="openTab = 2" :class="{ '-mb-px': openTab === 2 }" class="mr-1">
+				<a :class="openTab === 2 ? activeClasses : inactiveClasses" class="bg-white inline-block py-2 px-4 font-semibold" href="#">
+					中文
+				</a>
+			  </li>
+			</ul>
+			<div class="w-full pt-4">
+			  <div x-show="openTab === 1">
+				<h1>{{ $post->name }}</h1>
+				<article class="article">
+					{!! $autolink->convert($post->content) !!}
+				</article>
+			  </div>
+			  <div x-show="openTab === 2">
+				<h1>{{ $post->name_zh }}</h1>
+				<article class="article">
+					{!! $autolink->convert($post->content_zh) !!}
+				</article>
+			  </div>
+			</div>
+		  </div>
 		
 		<a href="{{ url('/?tags='.request()->tags) }}" class="btn btn-primary my-2">Back</a>
 		

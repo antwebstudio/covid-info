@@ -29,9 +29,13 @@ h2 {
 }
 
 .article ul {
-	@apply list-disc;
+	@apply list-disc mb-2;
 }
 
 .article ol {
-	@apply list-decimal;
+	@apply list-decimal mb-2;
+}
+
+.article ul li, article ol li {
+	@apply pl-3 ml-5
 }
